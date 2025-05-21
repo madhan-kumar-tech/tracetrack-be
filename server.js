@@ -22,13 +22,6 @@ const handleData = (protocol, socket, data) => {
     socket.write(ack);
     console.log(`[${protocol}] Sent ACK: ${ack}`);
   }
-
-  // To send the server configuration
-  if (message.includes('SERVER?')) {
-    const serverMessage = `SERVER,${process.env.SERVER_IP},0`;
-    socket.write(serverMessage);
-    console.log(`[${protocol}] Sent SERVER info: ${serverMessage}`);
-  }
 };
 
 // S15 Server
